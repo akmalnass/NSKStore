@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NSKStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NSKStore.styles.css" asp-append-version="true" />
+    <link href="~/Views/Shared/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        background-color: #79ffbe;
+    }
+
+    .all-browsers {
+
+        margin: 0;
+        padding: 50px;
+        background-color: white;
+    }
+
+    form{
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+    }
+
+    footerA {
+        background: #198754;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+       
+    }
+
+    footerA a {
+            color: white;
+            text-decoration: none;
+    }
+    nav {
+        height: 50px;
+        background: #198754;
+        background: #198754;
+    }
+
+        nav ul {
+            padding: 0;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+            nav ul li {
+                list-style: none;
+                font-family: arial;
+                font-size: 15px;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    float: left;
+                    padding:  20px;
+                    color: white;
+                }
+
+                    nav ul li a:hover {
+                        color: #2a70d9;
+                    }
+</style>
+
+<body>
+<form id="form">
+        <article class="all-browsers">
+
+    <div>
+            <h1><span style="color:#198754;"><u>Corporate Information </u></span></h1>
+            <h2><span style="color:#198754;"><u>Background NSK </u></span></h2>
+        <p>
+            NSK is a Lim's family business and it starts with a small kiosk selling groceries and household goods at the Chow Kit market in 1985.
+            Six years later, at 1991 NSK or better known as the New Seng Kee developed from a small kiosk business to a retail store that sells a variety of grocery and household items,
+            and it needs to operate at Jalan Raja, Kuala Lumpur.
+        </p>
+        <p>
+            At 1995, NSK has opened a store in Batu Caves Industrial Area and then opening a new store in Jalan Selayang Baru, which is two retail shops and stores.
+        </p>
+        <p>
+            In line with the development and economic growth, NSK network expansion by opening a wholesale store in Sungai Buloh which the concept of wholesale and import business.
+
+        </p>
+        <p>
+            NSK continues to expand its business by opening NSK Selayang that combines two concepts of retail and wholesale businesses in August 2003. 
+            Selayang wholesale market is located near NSK Selayang and it gives an advantage as a strategic business location. 
+            On above requirements and market demand, NSK Selayang began operating 24 hours beginning on January 1, 
+            2007 and therefore NSK Selayang as a business center in line with the vision of building the company into the largest wholesaler in Malaysia.
+        </p>
+        <p> 
+            NSK business empire continues to expand by opening another branch in Rawang is also the concept of retail and wholesale business in April 2007.
+            Located about one kilometer from the Toll Plaza Rawang and NSK Rawang become a strategic business location.
+            Until now NSK has several outlets in the Klang Valley like Ampang, Setapak, Shah Alam, Wangsa Maju and Balakong.
+        </p>
+    </div>
+    </article>
+</form>
+
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="AboutUs">About Us</a></li>
+                <li><a href="Contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+   
+ <footerA>
+                    <h4><u>GET IN TOUCH</u></h4>
+                 <p>
+                    <a href="https://www.facebook.com/nsktradecitymalaysia/"> Follow us on Facebook</a>
+                    <a>/</a>
+                    <a href="https://www.linkedin.com/company/nsk-trade-city-sdn-bhd">Follow us on LinkedIn</a>
+                </p>
+</footerA>
+
+</body>

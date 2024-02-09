@@ -1,0 +1,161 @@
+﻿@model NSKStore.Models.ProductCategoryViewModel
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<style>
+    body {
+        background-color: #79ffbe;
+        margin: 0;
+        padding: 0;
+    }
+
+    .addToCartBtn {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .create-new-button {
+        background-color: #FFFFFF; /* Green */
+        border: none;
+        color: #000000;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .edit-button, .delete-button, .details-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+        .edit-button:hover {
+            background-color: #38A34F; /* Darker green on hover */
+        }
+
+        .delete-button:hover {
+            background-color: #D32F2F; /* Red on hover */
+        }
+
+        .details-button:hover {
+            background-color: #1AB7EA; /* Blue on hover */
+        }
+
+</style>
+
+<div class="text-center">
+<h1>Our Product!</h1>
+</div>
+
+
+<button class="create-new-button">Create New</button>
+
+<form asp-controller="Products" asp-action="Index" method="get">
+    <p>
+
+        <select asp-for="productCategory" asp-items="Model.Category">
+            <option value="">All</option>
+        </select>
+
+        Product: <input type="text" name="searchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Products![0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products![0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products![0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products![0].Stock)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="productList">
+
+        @foreach (var item in Model.Products!)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                    <button class="addToCartBtn" data-product-id="@item.Id">Add to Cart</button>
+                    <button class="edit-button" data-id="@item.Id">Edit</button>
+                    <button class="delete-button" data-id="@item.Id">Delete</button>
+                    <button class="details-button" data-id="@item.Id">Details</button>
+            </td>
+            <td></td>
+        </tr>
+}
+
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.create-new-button').click(function () {
+                window.location.href = "/Products/Create";
+            });
+            $('.edit-button').click(function () {
+                var id = $(this).data('id');
+                window.location.href = "/Products/Edit/" + id;
+            });
+            $('.delete-button').click(function () {
+                var id = $(this).data('id');
+                window.location.href = "/Products/Delete/" + id;
+            });
+            $('.details-button').click(function () {
+                var id = $(this).data('id');
+                window.location.href = "/Products/Details/" + id;
+            });
+            $('.addToCartBtn').click(function () {
+                var productId = $(this).data('product-id');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Products/AddToCart',
+                    data: { productId: productId, quantity: 1 },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while adding the item to the cart.');
+                    }
+                });
+            });
+        });
+    </script>
+}

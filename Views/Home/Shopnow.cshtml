@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Shop with us!";
+}
+    <h1>@ViewData["Title"]</h1>
+
+<a asp-controller="Products" asp-action="Index">View Products</a>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.Name</h4>
+        <p>Price: $@item.Price</p>
+        <img src="@Url.Content(item.ImagePath)" alt="@item.Name" />
+    </div>
+}

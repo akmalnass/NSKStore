@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+
+    body {
+        background-color: #79ffbe; /* Set a background color in case the image doesn't load */
+        margin: 0;
+        padding: 0;
+        font-family: 'ITC Benguiat', sans-serif;
+        /* Use ITC Benguiat as the preferred font, fallback to a generic sans-serif font if not available */
+    }
+    
+
+
+    .background-image {
+        width: 100%; /* Make the image cover the entire viewport width */
+        height: 100%; /* Maintain the aspect ratio of the image */
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Place the image behind other content */
+    }
+
+    .content {
+        text-align: center;
+        padding: 50px;
+    }
+
+    .custom-text {
+        font-family: 'ITC Benguiat Std', sans-serif;
+        font-size: 10em;
+        color: #27cd7d;
+        text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .white-text {
+        font-family: 'ITC Benguiat Std';
+        font-size: 5em;
+        color: white;
+        text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+
+    }
+
+</style>
+
+<div>
+    <img src="~/image/landingPage2.jpeg" alt="Background Image" class="background-image" />
+</div>
+
+<div class="text-center">
+    <h1 class="display-4, custom-text">NSK</h1>
+    <h1 class="display-4, custom-text">GROCER</h1>
+    <p class="display-5, white-text">The Largest Fresh Grocer in Kuala Lumpur & Petaling Jaya</p>
+</div>

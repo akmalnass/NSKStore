@@ -1,0 +1,278 @@
+﻿@{
+    ViewData["Title"] = "Contact us";
+}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NSKStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NSKStore.styles.css" asp-append-version="true" />
+    <link href="~/Views/Shared/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        background-color: #79ffbe;
+        margin: 0;
+        padding: 0;
+        font-family: 'Helvetica', sans-serif;
+    }
+
+    .contact-container {
+        width: 90%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .contact-inner-container {
+        padding: 0px;
+        width: 96%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: lightsteelblue;
+        border-radius: 4px;
+    }
+
+    .contact-info-container {
+        width: 50%;
+        text-align: left;
+        padding: 50px;
+        background: #FFC0CB;
+    }
+
+    .contact-form {
+        width: 50%;
+        background: FFC0CB;
+        padding: 50px;
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    .contact-heading {
+        font-family: inherit;
+        font-size: 4rem;
+        font-weight: 700 !important;
+        line-height: 4rem;
+        color: #edad23;
+    }
+
+    .contact-description {
+        font-family: inherit;
+        font-weight: 700;
+        color: #edad23;
+        line-height: 1.6rem;
+        text-align: justify;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .line {
+        width: 100%;
+        height: 8px;
+        border-radius: 8px;
+        background: #edad23;
+        margin: 24px 0px;
+    }
+
+    .contact-details {
+        padding-top: 24px;
+    }
+
+        .contact-details h3 {
+            font-weight: 600;
+            color: #edad23;
+        }
+
+        .contact-details p {
+            color: black;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+    .social-link-container {
+        display: flex;
+        margin-top: 30px;
+    }
+
+        .social-link-container .fa {
+            margin-right: 20px;
+            cursor: pointer;
+            color: #edad23;
+            transition: all 0.2s;
+        }
+
+            .social-link-container .fa:hover, .submit-btn:hover {
+                transform: translateY(-4px);
+            }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .form-group {
+        width: 100%;
+        text-align: left;
+        margin-top: 2px;
+
+    }
+
+        .form-group:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+    .input-field {
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        padding: 18px;
+        background: #F2F2F2;
+    }
+
+    .form-input {
+        height: auto;
+    }
+
+    .form-group textarea {
+        height: 200px;
+    }
+
+    .submit-btn {
+        padding: 1rem 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        color: #F6F7A9;
+        background: #7925C7;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    footerA {
+        background: #198754;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+    }
+
+        footerA a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+    nav {
+        height: 50px;
+        background: #198754;
+        background: #198754;
+    }
+
+        nav ul {
+            padding: 0;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+            nav ul li {
+                list-style: none;
+                font-family: arial;
+                font-size: 15px;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    float: left;
+                    padding: 20px;
+                    color: white;
+                }
+
+                    nav ul li a:hover {
+                        color: #2a70d9;
+                    }
+</style>
+
+
+    <div class="contact-container">
+        <div class="contact-inner-container">
+
+            <div class="contact-info-container">
+            <h1 class="contact-heading">Contact Us!</h1>
+
+      <p class="contact-description">
+        We're open for any suggestion or just to have a chat.
+      </p>
+                <div class="line"></div>
+
+                <div class="contact-details">
+                    <h3><i class="fa fa-map-maker"></i> Address</h3>
+                    <p>Lot 4674 & 4675, Wisma Yap Tieh, Selayang Batu 8, Jalan Ipoh, 68100 Selangor Darul Ehsan.</p>
+                </div>
+                <hr />
+
+                <div class="contact-details">
+                    <h3><i class="fa fa-envelope"></i> Email</h3>
+                    <p>nsktradecity@nskgroup.com.my</p>
+                </div>
+                <hr />
+
+                <div class="contact-details">
+                    <h3><i class="fa fa-phone"></i> Lets Talk</h3>
+                    <p>+603-6120 7481/84/86</p>
+                </div>
+                <hr />
+            </div>
+
+            <div class="contact-form">
+                <form class="form">
+                    <div class="form-group">
+                        <input type="text" name="name" class="input-field form-input" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="input-field form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" class="input-field form-input" placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="input-field submit-btn" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<footerA>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="AboutUs">About Us</a></li>
+            <li><a href="Contactus">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <hr />
+    <h4><u>GET IN TOUCH</u></h4>
+    <p>
+        <a href="https://www.facebook.com/nsktradecitymalaysia/"> Follow us on Facebook</a>
+        <a>/</a>
+        <a href="https://www.linkedin.com/company/nsk-trade-city-sdn-bhd">Follow us on LinkedIn</a>
+    </p>
+</footerA>
+
